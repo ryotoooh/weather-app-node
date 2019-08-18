@@ -31,6 +31,6 @@ app.get('*', function(req, res){
 	res.send('You\'ve reached unknown address...');
 });
 
-app.listen(port, function() {
+app.listen(port, process.env.IP, function() {
     console.log('Server has started!');
 });

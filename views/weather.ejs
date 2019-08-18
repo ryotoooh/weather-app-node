@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weather App</title>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    </head>
+    <body>
+
+        <div id="container">
+            <div id="main">
+                <h1>Weather App</h1>
+                <form action="/weather" method="get" id="weather_form">
+                    <input type="text" name="location" id="location" value="<%= location %>"/>
+                </form>
+                <div id="icon_container"><i id="weather_icon" class=""></i></div>
+                <div id="weather_result"></div>
+            </div>
+            <div id="graphic_1"></div>
+        </div>
+
+        <script>
+        <% if(response.cod === 200){ %>
+        let data = <%= response.main.temp %>;
+        if(data > 20) {
+            $('#weather_icon').attr('class', 'fas fa-beer icon_animation');
+        } else {
+            $('#weather_icon').attr('class', 'fas fa-mug-hot icon_animation');
+        }
+        $('#weather_result').html(data + '&#176;C');
+        <% } %>
+
+        <% if(response.cod === '404'){ %>
+            $('#weather_result').text('Cannot find the location. Please try another location.');
+        <% } %>
+
+        </script>
+    </body>
+</html>

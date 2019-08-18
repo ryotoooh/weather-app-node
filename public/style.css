@@ -1,0 +1,83 @@
+html, body {
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-image: url('kenrick-mills-1h2Pg97SXfA-unsplash.jpg'); */
+    background-image: url('joshua-sortino-71vAb1FXB6g-unsplash.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-color: red; */
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#main {
+
+}
+
+#graphic_1 {
+    width: 30rem;
+    height: 30rem;
+    background-color: white;
+    border-radius: 50%;
+    position: fixed;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+}
+
+#location {
+    width: 20rem;
+    height: 2rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#icon_container {
+    text-align: center;
+    min-height: 5rem;
+    margin-top: 1rem;
+}
+
+#weather_icon {
+    font-size: 5rem;
+}
+
+.icon_animation {
+    animation: iconpop 2s linear;
+}
+
+@keyframes iconpop {
+    0% {
+        /* transform: scale(0); */
+        color: rgb(0,0,0,0);
+    }
+    100% {
+        /* transform: scale(1); */
+        color: rgb(0,0,0,1);
+    }
+}
+
+#weather_result {
+    max-width: 20rem;
+    min-height: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1rem;
+}
